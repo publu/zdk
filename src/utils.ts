@@ -31,6 +31,11 @@ export const WETH_MAINNET = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
 // // https://rinkeby.etherscan.io/address/0xc778417e063141139fce010982780140aa0cd5ab
 export const WETH_RINKEBY = '0xc778417E063141139Fce010982780140Aa0cD5Ab'
 
+// https://github.com/sameepsi/quickswap-default-token-list/blob/master/src/tokens/mumbai.json
+export const WMATIC_MUMBAI = '0xd0A1E359811322d97991E03f863a0C30C2cF029C'
+//https://github.com/sameepsi/quickswap-default-token-list/blob/master/src/tokens/mainnet.json
+export const WMATIC_POLYGON = '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270'
+
 /********************
  * Type Constructors
  ********************
@@ -237,6 +242,12 @@ export function chainIdToNetworkName(chainId: number): string {
     }
     case 1: {
       return 'mainnet'
+    }
+    case 137: {
+      return 'polygon'
+    }
+    case 80001: {
+      return 'mumbai'
     }
   }
 

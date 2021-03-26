@@ -52,6 +52,28 @@ const zora = new Zora(wallet, 4)
 await zora.totalSupply()
 ```
 
+#### Polygon Mainnet
+
+```typescript
+import { Zora } from '@zoralabs/zdk'
+import { Wallet } from 'ethers'
+
+const wallet = Wallet.createRandom()
+const zora = new Zora(wallet, 137)
+await zora.totalSupply()
+```
+
+#### Polygon Mumbai
+
+```typescript
+import { Zora } from '@zoralabs/zdk'
+import { Wallet } from 'ethers'
+
+const wallet = Wallet.createRandom()
+const zora = new Zora(wallet, 80001)
+await zora.totalSupply()
+```
+
 #### Local Blockchain
 
 When using a local blockchain you must specify overrides for both `mediaAddress` and `marketAddress`. These should point to the addresses of deployed Zora Media and Market contracts on your local blockchain.
