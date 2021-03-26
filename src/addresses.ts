@@ -1,6 +1,8 @@
 import rinkebyAddresses from '@zoralabs/core/dist/addresses/4.json'
 import mainnetAddresses from '@zoralabs/core/dist/addresses/1.json'
 
+import mumbaiAddresses from './80001.json'
+
 interface AddressBook {
   [key: string]: {
     [key: string]: string
@@ -13,4 +15,5 @@ interface AddressBook {
 export const addresses: AddressBook = {
   rinkeby: rinkebyAddresses,
   mainnet: mainnetAddresses,
+  mumbai: mumbaiAddresses,
 }
