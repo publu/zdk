@@ -37,7 +37,7 @@ describe('Zora', () => {
     it('throws an error if a mediaAddress is specified but not a marketAddress', () => {
       const wallet = Wallet.createRandom()
       expect(function () {
-        new Zora(wallet, 4, '0x1D7022f5B17d2F8B695918FB48fa1089C9f85401')
+        new Zora(wallet, 80001, '0x5690747e8243bE1165E62Ec8d6fA2C3b133B1C99')
       }).toThrow(
         'Zora Constructor: mediaAddress and marketAddress must both be non-null or both be null'
       )
@@ -46,7 +46,7 @@ describe('Zora', () => {
     it('throws an error if the marketAddress is specified but not a mediaAddress', () => {
       const wallet = Wallet.createRandom()
       expect(function () {
-        new Zora(wallet, 4, '', '0x1D7022f5B17d2F8B695918FB48fa1089C9f85401')
+        new Zora(wallet, 80001, '', '0x5690747e8243bE1165E62Ec8d6fA2C3b133B1C99')
       }).toThrow(
         'Zora Constructor: mediaAddress and marketAddress must both be non-null or both be null'
       )
@@ -57,17 +57,17 @@ describe('Zora', () => {
       expect(function () {
         new Zora(
           wallet,
-          4,
+          80001,
           'not a valid ethereum address',
-          '0x1D7022f5B17d2F8B695918FB48fa1089C9f85401'
+          '0x5690747e8243bE1165E62Ec8d6fA2C3b133B1C99'
         )
       }).toThrow('Invariant failed: not a valid ethereum address is not a valid address')
 
       expect(function () {
         new Zora(
           wallet,
-          4,
-          '0x1D7022f5B17d2F8B695918FB48fa1089C9f85401',
+          80001,
+          '0x5690747e8243bE1165E62Ec8d6fA2C3b133B1C99',
           'not a valid ethereum address'
         )
       }).toThrow('Invariant failed: not a valid ethereum address is not a valid address')
@@ -90,7 +90,7 @@ describe('Zora', () => {
         new Zora(
           wallet,
           50,
-          '0x1D7022f5B17d2F8B695918FB48fa1089C9f85401',
+          '0x5690747e8243bE1165E62Ec8d6fA2C3b133B1C99',
           '0x1dC4c1cEFEF38a777b15aA20260a54E584b16C48'
         )
       }).not.toThrow(
@@ -104,7 +104,7 @@ describe('Zora', () => {
       const zora = new Zora(
         wallet,
         50,
-        '0x1D7022f5B17d2F8B695918FB48fa1089C9f85401',
+        '0x5690747e8243bE1165E62Ec8d6fA2C3b133B1C99',
         '0x1dC4c1cEFEF38a777b15aA20260a54E584b16C48'
       )
       expect(zora.readOnly).toBe(false)
@@ -116,7 +116,7 @@ describe('Zora', () => {
       const zora = new Zora(
         provider,
         50,
-        '0x1D7022f5B17d2F8B695918FB48fa1089C9f85401',
+        '0x5690747e8243bE1165E62Ec8d6fA2C3b133B1C99',
         '0x1dC4c1cEFEF38a777b15aA20260a54E584b16C48'
       )
       expect(zora.readOnly).toBe(true)
@@ -135,7 +135,7 @@ describe('Zora', () => {
 
     it('initializes a Zora instance with the specified media and market address if they are passed in', () => {
       const wallet = Wallet.createRandom()
-      const mediaAddress = '0x1D7022f5B17d2F8B695918FB48fa1089C9f85401'
+      const mediaAddress = '0x5690747e8243bE1165E62Ec8d6fA2C3b133B1C99'
       const marketAddress = '0x1dC4c1cEFEF38a777b15aA20260a54E584b16C48'
 
       const zora = new Zora(wallet, 50, mediaAddress, marketAddress)
@@ -885,10 +885,10 @@ describe('Zora', () => {
 
         it('returns the zora chainId', () => {
           const provider = new JsonRpcProvider()
-          const zora = new Zora(provider, 4, zoraConfig.media, zoraConfig.market)
+          const zora = new Zora(provider, 80001, zoraConfig.media, zoraConfig.market)
           const domain = zora.eip712Domain()
 
-          expect(domain.chainId).toEqual(4)
+          expect(domain.chainId).toEqual(80001)
           expect(domain.verifyingContract.toLowerCase()).toEqual(
             zora.mediaAddress.toLowerCase()
           )

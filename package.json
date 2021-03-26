@@ -1,7 +1,7 @@
 {
   "name": "@niftytoolbox/zolygon",
   "description": "A forked SDK for using the Zora Media Protocol on Polygon (previously known as Matic)",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
   "files": [
